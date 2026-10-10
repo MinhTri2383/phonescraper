@@ -1,0 +1,21 @@
+# Python Environment
+.venv/
+venv/
+py3_12-venv/
+__pycache__/
+*.pyc
+
+# Login Information
+.env
+.env.*
+
+# Test files and scrape results
+*.log
+*.bak
+debug_*.html
+debug_*.json
+full_crawl_smoke.json
+discovered_phone_urls.json
+missing_phones.json
+scraped_phones.json
+all_phones.json
