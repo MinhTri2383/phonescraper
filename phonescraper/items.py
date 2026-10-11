@@ -3,13 +3,10 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/items.html
 
-from dataclasses import dataclass
-
 import scrapy
 
 
-# @dataclass
-class PhonescraperItem:
+class PhonescraperItem(scrapy.Item):
     url = scrapy.Field()
     title = scrapy.Field()
     price = scrapy.Field()

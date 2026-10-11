@@ -51,7 +51,7 @@ class PhonescraperPipeline:
             adapter['stars'] = stars_value
 
         sql = """
-        INSERT INTO phones (title, price, currency, brand)
+        INSERT INTO phones (url, title, price, currency, brand)
         VALUES (%s, %s, %s, %s, %s)
         ON DUPLICATE KEY UPDATE
             title = %s,
@@ -84,4 +84,10 @@ class PhonescraperPipeline:
         self.connection.commit()
 
         return item
+
+    def close_spider(self):
+        try:
+            self.cursor.close()
+        finally:
+            self.connection.close()
 
